@@ -1,11 +1,15 @@
 import React, { createContext, useContext, useState } from 'react'
 import { myData } from './miniData'
 import { MdDeleteForever } from "react-icons/md";
+import { Appcontext } from '../context/context';
 
 const DrillingApis = createContext()
 
 const ContextApiDrilling = () => {
-    const [newarry,setNewarry]=useState(myData)
+    // Prop From App no concern with tthis code
+    const { ara, setAra } = useContext(Appcontext)
+    const [newarry, setNewarry] = useState(myData)
+    
     const removee = (id) =>
 {
        
@@ -26,8 +30,14 @@ const ContextApiDrilling = () => {
           <div className="container">
               <div className="mx-auto col-lg-5 shadow p-3 rounded-4">
                   <h1 className='text-center'>ContextApi Prop Drilling</h1>
-
-              </div>
+<p className='text-center'>In React, prop drilling occurs when you need to pass data through multiple layers of components, even if some of them don't need the data directly.</p>
+                </div>
+                <div className="text-center my-3 mx-auto col-lg-5 shadow p-3 rounded-4">
+                    <h1>{ara}</h1>
+                    <p>I dont have concern with these
+                       
+                    </p>
+               </div>
               <div className="mx-auto col-lg-5 rounded-3 p-3 rounded-4">
                     <FirstChi/>
               </div>
